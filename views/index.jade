@@ -1,0 +1,60 @@
+extends layout
+
+block content
+  .body-wrapper
+    nav.navbar.navbar-fixed-top
+      .container
+        .navbar-inner
+          a.brand(href="http://www.kinvey.com/")
+            img(src="/img/logo.png")
+            img.hover(src="/img/logo-hover.png")
+          ul.nav.sub-site
+            li#resourcesLink
+              a(href="#/resources") Resources
+            li#tasksLink
+              a(href="#/tasks") Tasks
+          ul.nav.on-site
+            li
+              a(href="http://www.youtube.com/watch?v=qIdq-Bn6trM") Hipsters
+    .container.content-wrapper
+      .guide.page
+        .row
+          .span12
+            #main
+    footer
+      .container
+        ul.inline.unstyled
+        ul.inline.unstyled.pull-right
+          li By 
+            a(href="http://maxthayer.org") Max Thayer
+
+block templates
+  script#resources-review(type="text/template")
+    .row
+      .span12
+        h1 Resources
+    .row
+      .span5
+        .labels
+          .row
+            .span2 Title
+            .span2 Hourly Rate 
+        .new
+          form.form-inline.row
+            input.span2(type="text", name="title")
+            input.span2(type="number", name="cost")
+            button.submit.span1.btn-success.pull-right +
+        .list
+
+  script#resource-view(type="text/template")
+    .content.row
+      .span2 {{ title }}
+      .span2 {{ cost }}
+      button.span1.delete.btn-danger X
+    .edit.row
+      form.form-inline
+        input.span2(type="text", name="title")
+        input.span2(type="number", name="cost")
+        button.submit.span1.btn-success.pull-right +
+
+  script#task-view(type="text/template")

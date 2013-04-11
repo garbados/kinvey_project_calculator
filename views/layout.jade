@@ -1,0 +1,15 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel="shortcut icon", href="/images/favicon.ico")
+    block css
+      != css('fonts')
+      != css('bootstrap.min')
+      != css('style')
+  body
+    block content
+    block templates
+    block js
+      != js('//da189i1jfloii.cloudfront.net/js/kinvey-js-0.9.14.min.js')
+      != js('app')
